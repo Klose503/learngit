@@ -1,0 +1,40 @@
+1.查看修改的内容命令:
+	$ git diff filename
+2.查看历史记录命令 
+	$ git log
+	
+	commit 1094adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -> master)
+	Author: Michael Liao <askxuefeng@gmail.com>
+	Date:   Fri May 18 21:06:15 2018 +0800
+
+		append GPL
+
+	commit e475afc93c209a690c39c13a46716e8fa000c366
+	Author: Michael Liao <askxuefeng@gmail.com>
+	Date:   Fri May 18 21:03:36 2018 +0800
+
+		add distributed
+
+	commit eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0
+	Author: Michael Liao <askxuefeng@gmail.com>
+	Date:   Fri May 18 20:59:18 2018 +0800
+
+		wrote a readme file  
+	
+3.返回到上一个版本
+	$ git reset --hard HEAD^
+  HEAD表示当前版本，上一版本HEAD^ 5个版本HEAD~5
+  
+4.只要命令行窗口没关闭，可以找到commit id找到未来版本
+	$ git reset --hard 1094
+
+5.readme.txt修改后还没有放到暂存区，又作了修改，撤回修改回到添加到暂存区后的状态
+	$ git checkout -- readme.txt
+  git add到暂存区，还没有commit
+	$ git reset HEAD readme.txt  //git reset 即可以回退版本，也可以把暂存区的修改回退到工作区
+	
+	$ git checkout -- readme.txt
+	
+6.删除文件
+	$ git rm test.txt
+	$ git commit -m "remove test.txt"
